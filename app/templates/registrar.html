@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="text-center h1 text-success"> Registro de usuário</div>
-<div class="contatiner">
+<body
+style="background-color: rgb(240, 235, 235);"
+>
+<div style="position:absolute; top: 200px; left: 750px;;" class="flex-box container-box">
     {% from "_forms.html" import render_field %}
-<form method="post" enctype="multipart/form-data">
-  <div class="text-center">
-    
-    {{ render_field(form.nome) }}
-    {{ render_field(form.email) }}
-    {{ render_field(form.senha) }}
-    {{ render_field(form.confirmacao) }}
-    <input type="file" name="photo">
+  <form method="post" enctype="multipart/form-data">
+    <div style= "background-color: #2e343b; height: 450px; width: 425px;box-shadow: 0 0 1em black ; border-radius: 20px; text-align: center;" class="content-box">
+      <br>
+      <header style="color: white; text-align: center; font-family: Open Sans; font-size: 40px;">Cadastro</header>
+      {{ render_field(form.nome) }}
+      {{ render_field(form.email) }}
+      {{ render_field(form.senha) }}
+      {{ render_field(form.confirmacao) }}
+      <p style="text-align:center;"><input type="submit" value=Registrar class="btn btn-light btn-lg mt-4"></p>
+    </div>
+  </form>
 </div>
-  <p><input type=submit value=Registrar class="btn btn-info"></p>
-</form>
-</div>
-
+</body>
 
 {% endblock %}
