@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li style="font-family: Open Sans; font-size: 20px; background-color: rgba(158, 255, 154, 0.534); color: rgb(42, 88, 44);" class=" alert alert-{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+O teste está funcionando.
+{% endblock %}
