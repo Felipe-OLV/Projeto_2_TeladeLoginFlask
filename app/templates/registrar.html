@@ -1,19 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
 {% block content %}
 <body
-style="background-color: rgb(240, 235, 235);"
+style="background-color: rgb(255, 255, 255);"
 >
-<div style="position:absolute; top: 200px; left: 750px;;" class="flex-box container-box">
+<div style="position:absolute; top: 175px; left: 750px;" class="flex-box container-box">
     {% from "_forms.html" import render_field %}
   <form method="post" enctype="multipart/form-data">
-    <div style= "background-color: #2e343b; height: 450px; width: 425px;box-shadow: 0 0 1em black ; border-radius: 20px; text-align: center;" class="content-box">
+    <div style= "background-color: #2e343b; height: 525px; width: 425px;box-shadow: 0 0 1em black ; border-radius: 20px; text-align: center;" class="content-box">
       <br>
       <header style="color: white; text-align: center; font-family: Open Sans; font-size: 40px;">Cadastro</header>
-      {{ render_field(form.nome) }}
+      {{ render_field(form.name) }}
+      {{ render_field(form.username) }}
       {{ render_field(form.email) }}
-      {{ render_field(form.senha) }}
-      {{ render_field(form.confirmacao) }}
+      {{ render_field(form.password) }}
+      {{ render_field(form.confirm) }}
       <p style="text-align:center;"><input type="submit" value=Registrar class="btn btn-light btn-lg mt-4"></p>
     </div>
   </form>

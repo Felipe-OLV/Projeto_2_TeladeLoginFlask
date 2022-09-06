@@ -2,4 +2,34 @@
 
 {% block content %}
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li style="font-family: Open Sans; font-size: 20px; background-color: rgba(158, 255, 154, 0.534); color: rgb(42, 88, 44);" class=" alert alert-{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<title>Login</title>
+<body style="background-color:#ffffff;">
+<div class="container">
+      {% from "_forms.html" import render_field %}
+      <div class="row">
+      <form method="post" enctype="multipart/form-data">
+        <div style="text-align:center; background-color: #2e343b; height: 375px; width: 425px;box-shadow: 0 0 1em rgb(0, 0, 0); border-radius: 10px; position:absolute; top: 225px; left: 750px;">
+          <br>
+          <header style="text-align:center; color:white; font-family: Open Sans; font-size: 40px;">Login</header>
+          <br>
+          
+          {{ render_field(form.email) }}
+          {{ render_field(form.password) }}
+          
+          <p style="text-align:center;"><input type="submit" value=Entrar class="btn btn-light btn-lg mt-5"></p>
+        </div>
+      </form>
+  </div>
+</body>
+
 {% endblock %}
